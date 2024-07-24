@@ -4,17 +4,17 @@ import 'package:flutter/foundation.dart';
 class SimpleBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
-    debugPrint('Change = ${change}');
+    debugPrint('Change = $change');
   }
 
   @override
   void onClose(BlocBase bloc) {
-    // TODO: implement onClose
+    debugPrint('close = $bloc');
   }
 
   @override
   void onCreate(BlocBase bloc) {
-    // TODO: implement onCreate
+    debugPrint('create = $bloc');
   }
 
   @override
