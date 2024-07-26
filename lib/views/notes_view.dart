@@ -12,6 +12,8 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+              isScrollControlled:
+                  true, // make it scrollable if the keyboard is visible
               shape: RoundedRectangleBorder(
                   //to change the shape of the bottom sheet, since changing the decoration of the container won't affect the sheet
                   borderRadius: BorderRadius.circular(16)),

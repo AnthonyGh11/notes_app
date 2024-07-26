@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,9 +27,14 @@ class AddNoteBottomSheet extends StatelessWidget {
           return AbsorbPointer(
             // if it is truee, the screen and widgets will freeze, else it will act normally
             absorbing: state is AddNoteLoading ? true : false,
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  bottom: MediaQuery.of(context)
+                      .viewInsets
+                      .bottom), // view insets is used to check the keyboard's height and not let it go over the textfields when opened
+              child: const SingleChildScrollView(
                 child: AddNoteForm(),
               ),
             ),
