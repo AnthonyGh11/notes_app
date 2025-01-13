@@ -33,7 +33,7 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
               subtitle: Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 16),
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
                   note.subtitle,
                   style: TextStyle(
@@ -44,15 +44,17 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 icon: const Icon(
-                  FontAwesomeIcons.trashCan,
+                  Icons.delete,
                   color: Colors.black,
-                  size: 24,
+                  size: 30,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 note.date,
                 style: TextStyle(
